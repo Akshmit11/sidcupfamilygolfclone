@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    cursor: default;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#for-mobile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#whole{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+@media (min-width: 992px) {
+    #whole {
+        display: block;
+    }
+
+    #for-mobile {
+        display: none;
+    }
+}
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: #c5ff26;
+    border-radius: 100%;
+    position: fixed;
+    z-index: 100000;
+    display: none;
+    transition: all linear 0.15s;
+    pointer-events: none;
+    will-change: transform;
+}
+
+#cursor-blur {
+    height: 300px;
+    width: 300px;
+    background-color: #c5ff26;
+    filter: blur(150px);
+    border-radius: 50%;
+    position: fixed;
+    display: none;
+    z-index: 7;
+}
+
+#nav {
+    height: 145px;
+    width: 100%;
+    padding: 0 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    position: fixed;
+    z-index: 9;
+}
+
+#nav h4 {
+    font-weight: 500;
+}
+
+#nav > h4:hover {
+    cursor: pointer;
+    color: #000;
+}
+
+#nav img {
+    height: 75px;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.37);
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    zoom: 1.05;
+    z-index: 10;
+}
+
+#page1 h1 {
+    font-size: 140px;
+    font-weight: 900;
+    position: relative;
+}
+
+#page1 h1::before {
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    -webkit-text-stroke: 2px #c5ff26;
+    z-index: -1;
+    top: -5px;
+    left: -5px;
+}
+
+#page1 h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#page1 p {
+    font-size: 20px;
+    font-weight: 500;
+    width: 40%;
+}
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+
+#scroller {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar {
+    display: none;
+}
+
+#scroll-item {
+    display: inline-block;
+    margin-right: 10px;
+    animation-name: scroll;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+
+#scroll-item > h4 {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 120px;
+    color: black;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-text-stroke: 1px #fff;
+    transition: all linear 0.5s;
+}
+
+#scroll-item > h4:hover {
+    color: #c5ff26;
+    -webkit-text-stroke: 1px #c5ff26;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#about-us {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px;
+    position: relative;
+    z-index: 8;
+}
+
+#about-us > img {
+    height: 220px;
+    width: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+#about-us-info {
+    width: 50%;
+    text-align: center;
+}
+
+#about-us-info h3 {
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+#about-us-info p {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+
+#cards-container {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 8;
+}
+
+.card {
+    height: 80%;
+    width: 24%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card1 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#card2 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#card3 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#overlay {
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    padding: 30px;
+    padding-top: 160px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+
+#overlay > h4 {
+    color: black;
+    text-transform: uppercase;
+    font-size: 40px;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+#overlay > p {
+    color: black;
+    font-size: 18px;
+}
+
+.card:hover #overlay {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: rotate3d(-1, 1, 0, 20deg);
+}
+
+#green-div {
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    position: relative;
+    z-index: 8;
+    background: linear-gradient(to left bottom, #0cb50395, #c5ff26);
+}
+
+#green-div > h4 {
+    width: 50%;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+
+}
+
+#green-div > img {
+    height: 100%;
+    object-fit: cover;
+    width: 10%;
+}
+
+#green-div > img:first-child {
+    transform: scaleX(-1);
+}
+
+#page3 {
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#page3 > p {
+    font-size: 35px;
+    font-weight: 800;
+    width: 60%;
+    text-align: center;
+    line-height: 45px;
+}
+
+#page3 > img {
+    position: absolute;
+    height: 60px;
+}
+
+#page3 > #colon1 {
+    top: 25%;
+    left: 15%;
+}
+
+#page3 > #colon2 {
+    bottom: 30%;
+    right: 15%;
+}
+
+#page4 {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+}
+
+#elem {
+    height: 55%;
+    width: 30%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    z-index: 8;
+}
+
+#elem > h2 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #95C11E;
+    font-size: 37px;
+    color: #000;
+    font-weight: 800;
+    position: absolute;
+    z-index: 10;
+    transition: all ease 0.5s;
+    text-align: center;
+}
+
+#elem > img {
+    height: 100%;
+    width: 100%;
+    transition: all ease 0.5s;
+    object-fit: cover;
+    scale: 1.1;
+}
+
+#elem:hover > h2{
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#elem:hover > img{
+    scale: 1;
+}
+
+#page4 > h1 {
+    font-size: 110px;
+    position: absolute;
+    top: -35px;
+    color: #000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    -webkit-text-stroke: 1px white;
+}
+
+#footer {
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #0cb50395, #c5ff26);
+    display: flex;
+    position: relative;
+    z-index: 8;
+}
+
+#footer > #bgImg {
+    height: 100%;
+    width: 20%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+}
+
+
+#footer-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    z-index: 8;
+}
+
+#col1, #col2, #col3, #col4 {
+    width: 25%;
+    height: 100%;
+    padding: 4vw 0;
+    position: relative;
+}
+
+#col1 {
+    padding: 4vw 4vw;
+    padding-left: 6vw;
+}
+
+
+#col1 > img {
+    height: 150px;
+    width: 150px;
+}
+
+#socials {
+    display: flex;
+    gap: 15px;
+}
+
+#socials > i {
+    font-size: 35px;
+    color: black;
+}
+
+#socials > i:hover {
+    color: white
+}
+
+#col2 > ul, #col3 > ul, #col4 > ul {
+    list-style-type: none;
+    width: 100%;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#about-me {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to left bottom, purple, red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 8;
+}
